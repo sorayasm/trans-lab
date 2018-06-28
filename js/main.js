@@ -1,7 +1,7 @@
 email = "";
 bip = "";
 
-/* Login */
+//Login
 
 function go() {
     let email = document.getElementById("mail").value;
@@ -25,7 +25,7 @@ function go() {
     }
 }
 
-/*Navbar*/
+//Navbar
 function w3_open() {
     document.getElementById("sidebar").style.display = "block";
 }
@@ -34,7 +34,7 @@ function w3_close() {
     document.getElementById("sidebar").style.display = "none";
 }
 
-/*Opciones*/
+//Opciones
 function saldo() {
     window.location = "saldo.html";
 }
@@ -52,21 +52,32 @@ function faq() {
 }
 
 
-/*llamar datos*/
 
 
 
-/* perfil*/
+
+//Perfil
 
 window.onload = function() {
-    var correo = localStorage.getItem("correo");
+    let correo = localStorage.getItem("correo");
     document.getElementById("correologin").innerHTML = correo;
 };
 
 
-function myFunction() {
-    bip = parseInt(document.getElementById("bip").value);
+function addcard() {
+    bip = document.getElementById("bip").value;
+    document.getElementById("bip").value = "";
+    let tarjeta = localStorage.getItem("bip");
+    const cont = document.getElementById("cont");
+    const newBip = document.createElement("div");
+    const contenedorElemento = document.createElement("p");
+    let textNewBip = document.createTextNode(bip);
+    contenedorElemento.appendChild(textNewBip);
+    newBip.appendChild(contenedorElemento);
+    cont.appendChild(newBip);
 }
+
+//Saldo
 
 fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bip}`)
     .then(response => response.json())
@@ -75,7 +86,9 @@ fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bip}`)
 
     })
 
-/* Acordeon*/
+// 
+
+//Acordeon
 function myFunction(id) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
