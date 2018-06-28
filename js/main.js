@@ -78,9 +78,8 @@ function addcard2() {
     bip2 = document.getElementById("bip2").value;
     document.getElementById("bip2").value = "";
     let tarjeta = localStorage.getItem("bip2");
-    const cont = document.getElementById("cont");
-    const newBip2 = document.createElement("div");
-    const contenedorElemento = document.createElement("p");
+    const cont = document.getElementById("list");
+    const newBip2 = document.createElement("option");
     let textNewBip2 = document.createTextNode(bip2);
     contenedorElemento.appendChild(textNewBip2);
     newBip.appendChild(contenedorElemento);
