@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trans-Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Logged -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="logged">
+                <!-- Sidebar -->
+                <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+                    <a href="opciones.html" class="w3-bar-item w3-button">Home</a>
+                    <a href="saldo.html" class="w3-bar-item w3-button">Ver Saldo</a>
+                    <a href="tarifa.html" class="w3-bar-item w3-button">Calcular Tarifas</a>
+                    <a href="perfil.html" class="w3-bar-item w3-button">Perfil</a>
+                    <a href="faq.html" class="w3-bar-item w3-button">Preguntas Frecuentes</a>
+                </div>
+                <div class="title">
+                    <button class="nav" onclick="w3_open()">☰</button>
+                    <h1>TRANS-LAB</h1>
+                </div>
+                <!-- FAQ -->
+                <div class="w3-container" class="faq">
+
+                    <div class="w3-container">
+                        <p>Preguntas Frecuentes</p>
+                        <div class="w3-accordion ">
+                            <button onclick="myFunction('Demo1')" class="w3-btn-block w3-left-align btn">¿Qué cuidados requiere la tarjeta para mantenerla en buenas condiciones?</button>
+                            <div id="Demo1" class="w3-accordion-content w3-container">
+                                <p>Los cuidados de tu tarjeta son simples. Sólo debes evitar exponerla al calor, doblarla o quebrarla. Te recomendamos tenerla en un tarjetero plástico para aumentar su vida útil.</p>
+                            </div>
+                            <button onclick="myFunction('Demo2')" class="w3-btn-block w3-left-align btn">¿Cómo reviso los movimientos de mi tarjeta con más de 90 días?</button>
+                            <div id="Demo2" class="w3-accordion-content w3-container">
+                                <p>Solicítalo en las Oficinas de Servicio al Cliente, o bien llamando al Call Center de Tarjeta bip! al 800 730 00 73, opción 2. </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

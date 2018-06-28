@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trans-Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Logged -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="logged">
+                <!-- Sidebar -->
+                <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar">
+                    <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+                    <a href="opciones.html" class="w3-bar-item w3-button">Home</a>
+                    <a href="saldo.html" class="w3-bar-item w3-button">Ver Saldo</a>
+                    <a href="tarifa.html" class="w3-bar-item w3-button">Calcular Tarifas</a>
+                    <a href="perfil.html" class="w3-bar-item w3-button">Perfil</a>
+                    <a href="faq.html" class="w3-bar-item w3-button">Preguntas Frecuentes</a>
+                </div>
+                <div class="title">
+                    <button class="nav" onclick="w3_open()">☰</button>
+                    <h1>TRANS-LAB</h1>
+                </div>
+                <!-- Perfil -->
+                <div class="w3-container" class="perfil">
+                    <div class="imgperfil">
+                        <img src="docs/imagenpersona.png" alt="">
+                    </div>
+                    <div class="datosperfil">
+                        <div id="correologin"></div>
+                        N° de tarjeta: <input type="text" id="bip">
+                        <button id="btn" type="submit" onclick="myFunction()">Try it</button>
+                        <div class="col-12" id="cont"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
