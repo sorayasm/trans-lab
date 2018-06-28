@@ -52,10 +52,6 @@ function faq() {
 }
 
 
-
-
-
-
 //Perfil
 
 window.onload = function() {
@@ -67,7 +63,6 @@ window.onload = function() {
 function addcard() {
     bip = document.getElementById("bip").value;
     document.getElementById("bip").value = "";
-    let tarjeta = localStorage.getItem("bip");
     const cont = document.getElementById("cont");
     const newBip = document.createElement("div");
     const contenedorElemento = document.createElement("p");
@@ -78,6 +73,19 @@ function addcard() {
 }
 
 //Saldo
+
+function addcard2() {
+    bip2 = document.getElementById("bip2").value;
+    document.getElementById("bip2").value = "";
+    let tarjeta = localStorage.getItem("bip2");
+    const cont = document.getElementById("cont");
+    const newBip2 = document.createElement("div");
+    const contenedorElemento = document.createElement("p");
+    let textNewBip2 = document.createTextNode(bip2);
+    contenedorElemento.appendChild(textNewBip2);
+    newBip.appendChild(contenedorElemento);
+    cont.appendChild(newBip2);
+}
 
 fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bip}`)
     .then(response => response.json())
