@@ -1,26 +1,27 @@
-email = "";
-bip = "";
+let name = "";
+let email = "";
+let password = "";
+let bip = "";
 
 //Login
 
 function go() {
-    let email = document.getElementById("mail").value;
-    console.log(email)
-    localStorage.setItem("correo", email);
-    let password = document.getElementById("password").value;
-    console.log(password)
-    let hasNumber = password.match(/[0-9]/g);
-
+    name = document.getElementById("name").value;
+    localStorage.setItem("nombre", JSON.stringify(name));
+    email = document.getElementById("mail").value;
+    localStorage.setItem("correo", JSON.stringify(email));
+    password = document.getElementById("password").value;
+    localStorage.setItem("password", JSON.stringify(password));
 
     let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     let isValidEmail = re.test(email);
+    let hasNumber = password.match(/[0-9]/g);
 
     if (isValidEmail && hasNumber) {
         window.location = "opciones.html";
         return true;
     } else {
-        alert("Not a valid e-mail address or password");
+        alert("Por favor ingresa una dirección de correo válida");
         return false;
     }
 }
@@ -55,8 +56,8 @@ function faq() {
 //Perfil
 
 window.onload = function() {
-    let correo = localStorage.getItem("correo");
-    document.getElementById("correologin").innerHTML = correo;
+    document.getElementById("correologin").innerHTML = JSON.parse(localStorage.getItem("correo"));
+    document.getElementById("saludo").innerHTML = "Hola " + JSON.parse(localStorage.getItem("nombre"));
 };
 
 
@@ -75,32 +76,38 @@ function addcard() {
 //Saldo
 
 function addcard2() {
-    bip2 = document.getElementById("bip2").value;
-    document.getElementById("bip2").value = "";
     let tarjeta = localStorage.getItem("bip2");
-    const cont = document.getElementById("list");
-    const newBip2 = document.createElement("option");
-    let textNewBip2 = document.createTextNode(bip2);
-    contenedorElemento.appendChild(textNewBip2);
-    newBip.appendChild(contenedorElemento);
-    cont.appendChild(newBip2);
+
+
 }
 
-fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bip}`)
+/*fetch('http://www.psep.cl/api/Bip.php?&numberBip=${bip}')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        const dataBip = Object.values(data)
+
+        let numberBip = dataBip[0];
+        document.getElementById("databip").innerHTML = 'numero de bip ' + numberBip;
+
+        let statusBip = dataBip[1];
+        document.getElementById("databip1").innerHTML = 'Status ' + statusBip;
+
+        let amountBip = dataBip[2];
+        document.getElementById("databip2").innerHTML = 'saldo ' + amountBip;
+        saldoBip = Number(amountBip.replace(/[$,.]+/g, ""));
+
+        let dayBip = dataBip[3];
+        document.getElementById("databip3").innerHTML = 'fecha de carga ' + dayBip;
 
     })
-
-// 
+*/
 
 //Acordeon
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+function accordeon(id) {
+    const faq = document.getElementById(id);
+    if (faq.className.indexOf("w3-show") == -1) {
+        faq.className += " w3-show";
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        faq.className = faq.className.replace(" w3-show", "");
     }
 }
