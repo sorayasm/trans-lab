@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trans-Lab</title>
+    <title>Trans-Lab - Crear cuenta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="src/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -17,23 +17,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="login">
-                <img src="src/img/imagen.png" alt="Trans-Lab">
+                <a href="../index.html"><img src="img/imagen.png" alt="Trans-Lab"></a>
                 <h1>TRANS-LAB</h1>
                 <br>
+                <h2>Ingresa a tus datos</h2>
                 <form action="">
-                    <h2>Ingresa a tu cuenta</h2>
+                    <input type="text" id="name" placeholder="Nombre de Usuario*">
                     <input type="email" id="email" placeholder="Correo electrónico*">
-                    <br>
                     <input type="password" id="password" placeholder="Contraseña*">
                     <br>
                     <small id="emailHelp" class="form-text text-muted">Campos obligatorios*</small>
                     <br>
-                    <input type="button" id="loginbutton" onclick="loginWithFirebase()" value="Iniciar Sesión" class="btn-warning">
+                    <input type="button" id="registerbutton" onclick="register()" value="Registrate" class="btn-warning">
                     </br>
-                </form>
-                <p class="signin">¿No tienes cuenta? <a href="src/register.html">Registrate acá</a>
-                    <br>
-                </p>
                 </form>
             </div>
         </div>
@@ -42,8 +38,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <script src="src/js/login.js"></script>
-    <script src="src/js/main.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
