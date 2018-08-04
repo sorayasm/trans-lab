@@ -32,6 +32,7 @@ function register() {
 
 }
 
+
 // Registro
 function registerWithFirebase() {
     firebase.auth().createUserWithEmailAndPassword(email, password)

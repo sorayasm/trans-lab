@@ -8,9 +8,6 @@ function loginWithFirebase() {
             console.log("Usuario inició sesión con éxito");
             window.location = "src/options.html";
         })
-        .then(() => {
-
-        })
         .catch((error) => {
             console.log("Error de firebase > Código > " + error.code);
             console.log("Error de firebase > Mensaje > " + error.message);

@@ -33,13 +33,6 @@ a:visited {
     color: rgb(255, 144, 25);
 }
 
-input {
-    padding: 5px;
-    width: 285px;
-    border: 0px;
-    margin-top: 5px;
-}
-
 .container {
     min-width: 320px;
     width: 100%;
@@ -87,6 +80,21 @@ img {
     padding: 5px;
     height: 20px;
     font-size: 10px;
+}
+
+.card {
+    background-color: rgb(225, 130, 41);
+    color: white;
+    display: block;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px auto 5px auto;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px;
 }
 
 
@@ -160,23 +168,14 @@ img {
     padding: 0%;
 }
 
-#card {
-    background-color: rgb(225, 130, 41);
-    color: white;
-    display: block;
-    height: 30px;
-    width: 288px;
-    margin-top: 5px;
-    border: none;
-    box-sizing: border-box;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-}
-
-#saludo,
+#greetings,
 #cont {
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#profiledata {
+    padding: 5px;
 }
 
 

@@ -1,5 +1,5 @@
-// User logged & email
-firebase.auth().onAuthStateChanged(function getUser(user) {
+// User logged
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         let currentUser = user.uid;
         let currentUserEmail = user.email;
@@ -10,12 +10,16 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
     }
 });
 
-// Add Card 
-let bip = document.getElementById("bip").value;
-
-function addcard(bip) {
 
 
+
+//Profile Page
+
+
+/*
+
+function addcard() {
+    bip = document.getElementById("bip").value;
     document.getElementById("bip").value = "";
     const cont = document.getElementById("cont");
     const newBip = document.createElement("div");
@@ -24,7 +28,10 @@ function addcard(bip) {
     contenedorElemento.appendChild(textNewBip);
     newBip.appendChild(contenedorElemento);
     cont.appendChild(newBip);
-}
+}*/
+
+// Profile info
+
 
 
 
@@ -57,3 +64,13 @@ function addcard2() {
 
     })
 */
+
+//Acordeon
+function accordeon(id) {
+    const faq = document.getElementById(id);
+    if (faq.className.indexOf("w3-show") == -1) {
+        faq.className += " w3-show";
+    } else {
+        faq.className = faq.className.replace(" w3-show", "");
+    }
+}

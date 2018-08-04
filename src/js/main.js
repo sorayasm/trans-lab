@@ -1,17 +1,4 @@
-// Inicializar Firebase
-var config = {
-    apiKey: "AIzaSyBYp2IfztlBcWgldVG0KeT18ucQQCQ2kvU",
-    authDomain: "translab-labo.firebaseapp.com",
-    databaseURL: "https://translab-labo.firebaseio.com",
-    projectId: "translab-labo",
-    storageBucket: "translab-labo.appspot.com",
-    messagingSenderId: "730964263598"
-};
-firebase.initializeApp(config);
-
-
-
-//Navbar
+// Navbar
 function w3_open() {
     document.getElementById("sidebar").style.display = "block";
 }
@@ -37,10 +24,7 @@ function faq() {
     window.location = "faq.html";
 }
 
-
-
-
-//Acordeon
+// Acordeon
 function accordeon(id) {
     const faq = document.getElementById(id);
     if (faq.className.indexOf("w3-show") == -1) {
@@ -48,4 +32,18 @@ function accordeon(id) {
     } else {
         faq.className = faq.className.replace(" w3-show", "");
     }
+}
+
+// Logout
+
+function logoutWithFirebase() {
+    firebase.auth().signOut()
+        .then(() => {
+            console.log("Sesion finalizada")
+            window.location = "../index.html";
+        })
+        .catch((error) => {
+            console.log("Error de Firebase > Codigo > " + error.code)
+            console.log("Error de Firebase > Mensaje > " + error.message)
+        });
 }
