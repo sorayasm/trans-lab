@@ -111,6 +111,33 @@ img {
     padding: 7px;
 }
 
+.options button {
+    background-color: rgb(225, 130, 41);
+    color: white;
+    padding: 5px 15px 5px 15px;
+    display: block;
+    height: 30px;
+    max-width: 736px;
+    width: 100%;
+    border: none;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.accordeon {
+    background-color: white;
+    font-size: 15px;
+    line-height: 20px;
+}
+
 
 /* Etiquetas */
 
@@ -136,31 +163,6 @@ img {
     padding: 0px;
 }
 
-#options button {
-    background-color: rgb(225, 130, 41);
-    color: white;
-    padding: 5px 15px 5px 15px;
-    display: block;
-    height: 30px;
-    max-width: 736px;
-    width: 100%;
-    border: none;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-}
-
-#correologin {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: white;
-    background-color: rgb(225, 130, 41);
-    padding: 5px;
-    width: 288px;
-}
-
 #cont p {
     background-color: white;
     display: block;
@@ -177,16 +179,12 @@ img {
 
 #faqtitle {
     margin: 10px;
-    background-color: rgb(225, 130, 41);
-    color: white;
-    padding: 15px;
+    background-color: white;
+    color: rgb(225, 130, 41);
+    font-size: 15px;
+    line-height: 30px;
     width: 100%x;
-    height: 80px;
     vertical-align: center;
-}
-
-#perfil {
-    padding: 0%;
 }
 
 #greetings,
@@ -199,5 +197,11 @@ img {
     padding: 5px;
 }
 
-
-/*MediaQueries*/
+#total {
+    margin-top: 25px;
+    color: white;
+    font-size: 35px;
+    background-color: rgb(225, 130, 41);
+    height: 50px;
+    line-height: 50px;
+}

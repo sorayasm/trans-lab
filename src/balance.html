@@ -31,14 +31,16 @@
                     <button class="nav" onclick="w3_open()">☰</button>
                     <h1>TRANS-LAB</h1>
                 </div>
-                <div class="w3-container">
+                <div class="w3-container options">
                     <p>Ingresar n° de tarjeta:</p>
                     <input type="text" class="form-control" id="bip">
                     <br>
-                    <button class="card form-control btn-warning" onclick="addcard()">Agregar tarjeta</button>
+                    <button onclick="addcard()">Agregar tarjeta</button>
                     <br>
-                    <select id="list" class="select" onchange="select(this, event)"></select>
-                    <p id="saldo"></p>
+                    <select id="list" class="select" onchange="displayOption(this.value)"></select>
+                    <button onclick="total()">VER SALDO</button>
+                    <div id="total" class="hide">
+                    </div>
                 </div>
             </div>
         </div>

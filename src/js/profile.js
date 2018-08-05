@@ -2,7 +2,6 @@
 let currentUser = 0;
 let currentUserEmail = 0;
 
-
 // User logged & email
 firebase.auth().onAuthStateChanged(function getUser(user) {
     // Parameters
@@ -15,6 +14,7 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
     } else {
         window.location = "../index.html";
     }
+
     firebase.database().ref().child(`usuarios/` + currentUser + `/bip`).on("child_added",
         function(data) {
             v = data.val();
@@ -22,10 +22,8 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
             const p = document.createElement("p")
             p.innerHTML = `<p>` + v + `</p>`;
             cont.appendChild(p);
-
         })
 });
-
 
 // Adding Bip cards to current user in Database
 function addcard() {
@@ -36,36 +34,4 @@ function addcard() {
         firebase.database().ref(`usuarios/` + currentUser).child(`bip`).push(input);
         document.getElementById("bip").value = ""; // clean bip input
     }
-
-}
-
-//function showNewCard() {
-
-//Saldo
-/*
-function addcard2() {
-    let tarjeta = localStorage.getItem("bip2");
-
-
-}*/
-
-/*fetch('http://www.psep.cl/api/Bip.php?&numberBip=${bip}')
-    .then(response => response.json())
-    .then(data => {
-        const dataBip = Object.values(data)
-
-        let numberBip = dataBip[0];
-        document.getElementById("databip").innerHTML = 'numero de bip ' + numberBip;
-
-        let statusBip = dataBip[1];
-        document.getElementById("databip1").innerHTML = 'Status ' + statusBip;
-
-        let amountBip = dataBip[2];
-        document.getElementById("databip2").innerHTML = 'saldo ' + amountBip;
-        saldoBip = Number(amountBip.replace(/[$,.]+/g, ""));
-
-        let dayBip = dataBip[3];
-        document.getElementById("databip3").innerHTML = 'fecha de carga ' + dayBip;
-
-    })
-*/
+};

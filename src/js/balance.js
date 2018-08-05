@@ -1,6 +1,8 @@
 // Parameters
 let currentUser = 0;
 let currentUserEmail = 0;
+let bipcard = 0;
+let calculate = 760;
 
 
 // User logged & email
@@ -17,22 +19,13 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
     firebase.database().ref().child(`usuarios/` + currentUser + `/bip`).on("child_added",
         function(data) {
             v = data.val();
-            console.log(v)
-                //select
+            //select
             select = document.createElement("option")
             select.text = v;
             select.value = v;
             list.appendChild(select);
         })
 });
-
-
-
-// Select function
-function select(event) {
-    cardSelected = this.options[this.selectedIndex].value;
-    console.log(cardSelected)
-}
 
 // Adding Bip cards to current user in Database
 function addcard() {
@@ -43,36 +36,54 @@ function addcard() {
         firebase.database().ref(`usuarios/` + currentUser).child(`bip`).push(input);
         document.getElementById("bip").value = ""; // clean bip input
     }
-
 }
 
-//function showNewCard() {
+// Select bip function
+function displayOption(option) {
+    bipcard = option;
+    console.log(bipcard)
+}
 
-//Saldo
-/*
-function addcard2() {
-    let tarjeta = localStorage.getItem("bip2");
 
+//Print total balance
+function total(bipcard) {
+    fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bipcard}`) /////////ARREGLAR
+        .then(response => response.json())
+        .then(data => {
+            const dataBip = Object.values(data)
+            const t = dataBip[2];
+            console.log(t);
+            document.getElementById("total").style.visibility = "visible";
+            const total = document.getElementById("total");
+            const p = document.createElement("p")
+            p.innerHTML = `<p>Saldo: ` + t + `</p>`;
+            total.appendChild(p);
+        })
+}
 
-}*/
+// Select rate function
+function displayRate(rate) {
+    calculate = rate;
+    console.log(rate)
+}
+//Print total balance minus rate
+function rateTotal(calculate, bipcard) {
+    fetch(`http://www.psep.cl/api/Bip.php?&numberBip=666`) /////////ARREGLAR
+        .then(response => response.json())
+        .then(data => {
+            const dataBip = Object.values(data)
+            const r = dataBip[2].value - parseInt(calculate);
+            console.log(dataBip[2]);
+            document.getElementById("rate").style.visibility = "visible";
+            const total = document.getElementById("rate");
+            const p = document.createElement("p")
+            p.innerHTML = `<p>Saldo: ` + r + `</p>`;
+            total.appendChild(p);
+        })
+}
 
-/*fetch('http://www.psep.cl/api/Bip.php?&numberBip=${bip}')
-    .then(response => response.json())
-    .then(data => {
-        const dataBip = Object.values(data)
-
-        let numberBip = dataBip[0];
-        document.getElementById("databip").innerHTML = 'numero de bip ' + numberBip;
-
-        let statusBip = dataBip[1];
-        document.getElementById("databip1").innerHTML = 'Status ' + statusBip;
-
-        let amountBip = dataBip[2];
-        document.getElementById("databip2").innerHTML = 'saldo ' + amountBip;
-        saldoBip = Number(amountBip.replace(/[$,.]+/g, ""));
-
-        let dayBip = dataBip[3];
-        document.getElementById("databip3").innerHTML = 'fecha de carga ' + dayBip;
-
-    })
-*/
+// Select bip function
+function displayRate(rate) {
+    calculate = rate;
+    console.log(rate)
+}
