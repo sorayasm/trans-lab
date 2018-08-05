@@ -11,7 +11,6 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
     // Print greetings or logout
     if (user) {
         console.log(currentUser + " " + currentUserEmail + " ");
-        document.getElementById("greetings").innerHTML = currentUserEmail;
     } else {
         window.location = "../index.html";
     }
@@ -19,13 +18,21 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
         function(data) {
             v = data.val();
             console.log(v)
-            const p = document.createElement("p")
-            p.innerHTML = `<p>` + v + `</p>`;
-            cont.appendChild(p);
-
+                //select
+            select = document.createElement("option")
+            select.text = v;
+            select.value = v;
+            list.appendChild(select);
         })
 });
 
+
+
+// Select function
+function select(event) {
+    cardSelected = this.options[this.selectedIndex].value;
+    console.log(cardSelected)
+}
 
 // Adding Bip cards to current user in Database
 function addcard() {

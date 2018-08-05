@@ -10,6 +10,7 @@ body {
     font-weight: 400;
     line-height: 1;
     font-size: 12px;
+    text-align: center;
 }
 
 h1 {
@@ -36,7 +37,6 @@ a:visited {
 .container {
     min-width: 320px;
     width: 100%;
-    min-height: 600px;
     height: 100%;
 }
 
@@ -88,7 +88,21 @@ img {
     display: block;
     height: 30px;
     width: 100%;
-    margin-top: 5px auto 5px auto;
+    margin: 5px auto 5px auto;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 7px;
+}
+
+.select {
+    background-color: white;
+    display: block;
+    height: 30px;
+    width: 100%;
+    margin: 5px auto 5px auto;
     border: none;
     box-sizing: border-box;
     font-size: 1rem;
@@ -122,7 +136,7 @@ img {
     padding: 0px;
 }
 
-#opciones button {
+#options button {
     background-color: rgb(225, 130, 41);
     color: white;
     padding: 5px 15px 5px 15px;
@@ -147,11 +161,18 @@ img {
     width: 288px;
 }
 
-#cont {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#cont p {
     background-color: white;
-    width: 288px;
+    display: block;
+    height: 30px;
+    width: 100%;
+    margin: 5px auto 5px auto;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
 }
 
 #faqtitle {
