@@ -1,33 +1,45 @@
+// Parameters
+let currentUser = 0;
+let currentUserEmail = 0;
+
+
 // User logged & email
 firebase.auth().onAuthStateChanged(function getUser(user) {
+    // Parameters
+    currentUser = user.uid;
+    currentUserEmail = user.email;
+    // Print greetings or logout
     if (user) {
-        let currentUser = user.uid;
-        let currentUserEmail = user.email;
         console.log(currentUser + " " + currentUserEmail + " ");
         document.getElementById("greetings").innerHTML = currentUserEmail;
     } else {
         window.location = "../index.html";
     }
+
+
+    /*
+        document.getElementById("bip").value = "";
+        const cont = document.getElementById("cont");
+        const newBip = document.createElement("div");
+        const contenedorElemento = document.createElement("p");
+        let textNewBip = document.createTextNode(bip);
+        contenedorElemento.appendChild(textNewBip);
+        newBip.appendChild(contenedorElemento);
+        cont.appendChild(newBip);
+    }*/
+
+
 });
 
-// Add Card 
-let bip = document.getElementById("bip").value;
-
-function addcard(bip) {
+// Adding Bip cards to current user in Database
 
 
-    document.getElementById("bip").value = "";
-    const cont = document.getElementById("cont");
-    const newBip = document.createElement("div");
-    const contenedorElemento = document.createElement("p");
-    let textNewBip = document.createTextNode(bip);
-    contenedorElemento.appendChild(textNewBip);
-    newBip.appendChild(contenedorElemento);
-    cont.appendChild(newBip);
+
+
+function addcard() { // agregar tarjeta a usuario actual
+    let input = document.getElementById("bip").value;
+    firebase.database().ref(`usuarios/` + currentUser).child(`bip`).set(input);
 }
-
-
-
 
 //Saldo
 /*
