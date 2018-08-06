@@ -82,10 +82,10 @@ function rateTotal() {
             const r = amountValue - calculate;
             console.log(amountValue + " - " + calculate + " = " + r);
             // Print Amount minus Rate
-            document.getElementById("rate").style.visibility = "visible";
-            const rate = document.getElementById("rate");
+            document.getElementById("total").style.visibility = "visible";
+            const total = document.getElementById("total");
             const p = document.createElement("p");
             p.innerHTML = `<p>Saldo: ` + r + `</p>`;
-            rate.appendChild(p);
+            total.appendChild(p);
         })
 }
