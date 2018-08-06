@@ -33,10 +33,13 @@
                 </div>
                 <div class="w3-container options">
                     <p>Seleccionar tarjeta:</p>
-                    <select id="list" class="select" onchange="displayOption(this.value)"></select>
+                    <select id="list" class="select" onchange="displayOption(this.value)">
+                        <option value="0" selected="selected" disabled>Elige una tarjeta</option>
+                    </select>
                     <br>
                     <p>Seleccionar tarifa:</p>
                     <select id="rate" class="select" onchange="displayRate(this.value)">
+                        <option value="0" selected="selected" disabled>Elige una tarifa</option>
                         <option value="760">Horario Alto: $760</option>
                         <option value="680">Horario Medio: $680</option>
                         <option value="630">Horario Bajo: $630</option>

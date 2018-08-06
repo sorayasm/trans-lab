@@ -48,13 +48,12 @@ function displayOption() {
 
 //Print total balance
 function total() {
-    console.log(typeof(bipcard) + " tarjeta: " + bipcard)
     let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const dataBip = Object.values(data)
-            const t = parseFloat(dataBip[2]);
+            const dataBip = Object.values(data);
+            const t = dataBip[2];
             console.log("Saldo de la tarjeta: " + t);
             // Print Balance
             document.getElementById("total").style.visibility = "visible";

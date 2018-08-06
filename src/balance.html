@@ -37,7 +37,9 @@
                     <br>
                     <button onclick="addcard()">Agregar tarjeta</button>
                     <br>
-                    <select id="list" class="select" onchange="displayOption(this.value)"></select>
+                    <select id="list" class="select" onchange="displayOption(this.value)">
+                        <option value="0" selected="selected" disabled>Elige una tarjeta</option>
+                    </select>
                     <button onclick="total()">VER SALDO</button>
                     <div id="total" class="hide">
                     </div>
