@@ -89,5 +89,3 @@ function rateTotal() {
             total.appendChild(p);
         })
 }
-module.export = displayOption()
-module.export = total()

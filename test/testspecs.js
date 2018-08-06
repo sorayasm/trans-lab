@@ -11,18 +11,18 @@ describe("balance()", () => { //Llamar a la función que quiero testear
 
 describe("rate()", () => { //Llamar a la función que quiero testear
     it("Debe haber una función  que llame a la pagina de tarifa", () => {
-        assert.isFunction(main);
+        assert.isFunction(rate);
     })
 });
 
 describe("profile()", () => { //Llamar a la función que quiero testear
     it("Debe haber una función  que llame a la pagina de perfil", () => {
-        assert.isFunction(main);
+        assert.isFunction(profile);
     })
 });
 
 describe("faq()", () => { //Llamar a la función que quiero testear
     it("Debe haber una función  que llame a la pagina de Preguntas Frecuentes", () => {
-        assert.isFunction(main);
+        assert.isFunction(faq);
     })
 });

@@ -11,22 +11,22 @@ function w3_close() {
 function balance() {
     window.location = "balance.html";
 }
-module.export = balance();
+module.export = balance;
 
 function rate() {
     window.location = "rate.html";
 }
-module.export = rate();
+module.export = rate;
 
 function profile() {
     window.location = "profile.html";
 }
-module.export = profile();
+module.export = profile;
 
 function faq() {
     window.location = "faq.html";
 }
-module.export = rate();
+module.export = faq;
 
 // Acordeon
 function accordeon(id) {
