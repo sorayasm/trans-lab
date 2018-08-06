@@ -1,8 +1,8 @@
 // Parameters
 let currentUser = 0;
 let currentUserEmail = 0;
-let bipcard = 0;
 let calculate = 760;
+let bipcard = "";
 
 
 // User logged & email
@@ -23,6 +23,7 @@ firebase.auth().onAuthStateChanged(function getUser(user) {
             select = document.createElement("option")
             select.text = v;
             select.value = v;
+            select.name = v;
             list.appendChild(select);
         })
 });
@@ -39,15 +40,16 @@ function addcard() {
 }
 
 // Select bip function
-function displayOption(option) {
-    bipcard = option;
-    console.log(bipcard)
+function displayOption() {
+    bipcard = document.getElementById("list").value;
+    console.log("tarjeta: " + bipcard)
 }
-
 
 //Print total balance
 function total(bipcard) {
-    fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${bipcard}`) /////////ARREGLAR
+    console.log(typeof(bipcard) + " tarjeta: " + bipcard)
+    let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const dataBip = Object.values(data)
@@ -67,8 +69,9 @@ function displayRate(rate) {
     console.log(rate)
 }
 //Print total balance minus rate
-function rateTotal(calculate, bipcard) {
-    fetch(`http://www.psep.cl/api/Bip.php?&numberBip=666`) /////////ARREGLAR
+function rateTotal(calculate) {
+    let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const dataBip = Object.values(data)
