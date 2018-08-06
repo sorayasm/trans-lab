@@ -1,16 +1,16 @@
 const assert = require('chai').assert;
 global.window = global;
 
-const register = require("../src/js/register");
+require("../src/js/balance");
 
+describe("displayOption()", () => { //Llamar a la función que quiero testear
+    it("Debe haber una función que ingrese la data del select de tarjetas", () => {
+        assert.ok(displayOption);
+    })
+});
 
-describe('register()', () => { //Describe lo que habrá dentro de cada función
-    describe('Debería verificar si la password cumple con los requisitos', () => {
-        it('La password debe ser solo numeros', (password) => { //Caso de prueba
-            assert.equal(register("123456"), true);
-            assert.equal(register("jsahdasjdsah"), false);
-            assert.equal(register("jsdkjfh45"), false);
-        });
-
-    });
+describe("total()", () => { //Llamar a la función que quiero testear
+    it("Debe haber una función para desplegar el saldo total", () => {
+        assert.ok(total);
+    })
 });

@@ -42,51 +42,51 @@ function addcard() {
 // Select bip function
 function displayOption() {
     bipcard = document.getElementById("list").value;
-    console.log("tarjeta: " + bipcard)
+    console.log("Tarjeta: " + bipcard)
 }
 
+
 //Print total balance
-function total(bipcard) {
+function total() {
     console.log(typeof(bipcard) + " tarjeta: " + bipcard)
     let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);
     fetch(url)
         .then(response => response.json())
         .then(data => {
             const dataBip = Object.values(data)
-            const t = dataBip[2];
-            console.log(t);
+            const t = parseFloat(dataBip[2]);
+            console.log("Saldo de la tarjeta: " + t);
+            // Print Balance
             document.getElementById("total").style.visibility = "visible";
             const total = document.getElementById("total");
-            const p = document.createElement("p")
+            const p = document.createElement("p");
             p.innerHTML = `<p>Saldo: ` + t + `</p>`;
             total.appendChild(p);
         })
 }
 
+
 // Select rate function
-function displayRate(rate) {
-    calculate = rate;
-    console.log(rate)
+function displayRate() {
+    calculate = document.getElementById("rate").value;
+    console.log("Tarifa: " + calculate)
 }
 //Print total balance minus rate
-function rateTotal(calculate) {
+function rateTotal() {
     let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const dataBip = Object.values(data)
-            const r = dataBip[2].value - parseInt(calculate);
-            console.log(dataBip[2]);
+            const dataBip = Object.values(data);
+            const amount = dataBip[2];
+            const amountValue = Number(amount.replace(/[$,.]+/g, ""));
+            const r = amountValue - calculate;
+            console.log(amountValue + " - " + calculate + " = " + r);
+            // Print Amount minus Rate
             document.getElementById("rate").style.visibility = "visible";
-            const total = document.getElementById("rate");
-            const p = document.createElement("p")
+            const rate = document.getElementById("rate");
+            const p = document.createElement("p");
             p.innerHTML = `<p>Saldo: ` + r + `</p>`;
-            total.appendChild(p);
+            rate.appendChild(p);
         })
-}
-
-// Select bip function
-function displayRate(rate) {
-    calculate = rate;
-    console.log(rate)
 }
