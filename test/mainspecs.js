@@ -1,19 +1,27 @@
-const assert = require('chai').assert;
+const assert = require("chai").assert;
 global.window = global;
 
-require("../src/js/main");
+const main = require("../src/js/main.js");
 
-describe("Funciones del main", () => {
-    it("Debe haber una función que llame a la página de saldo", () => {
-        assert.isFunction(balance);
+describe("accordeon()", () => {
+    it("debería devolver si la funcion accordeon funciona", () => {
+        assert.isOk(main)
     })
-    it("Debe haber una función que llame a la página de tarifa", () => {
-        assert.isFunction(rate);
+});
+
+describe("logoutWithFirebase()", () => {
+    it("debería devolver si la funcion logoutWithFirebase funciona", () => {
+        assert.isOk(main)
     })
-    it("Debe haber una función que llame a la página de perfil", () => {
-        assert.isFunction(profile);
+});
+
+describe("w3_open()", () => {
+    it("debería devolver si la funcion w3_open funciona", () => {
+        assert.isOk(main)
     })
-    it("Debe haber una función que llame a la página de Preguntas Frecuentes", () => {
-        assert.isFunction(faq);
+});
+describe("w3_close()", () => {
+    it("debería devolver si la funcion w3_close funciona", () => {
+        assert.isOk(main)
     })
 });

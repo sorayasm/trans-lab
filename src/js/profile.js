@@ -35,3 +35,4 @@ function addcard() {
         document.getElementById("bip").value = ""; // clean bip input
     }
 };
+module.exports.addcard = addcard;

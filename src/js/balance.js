@@ -42,8 +42,9 @@ function addcard() {
 // Select bip function
 function displayOption() {
     bipcard = document.getElementById("list").value;
-    console.log("Tarjeta: " + bipcard)
+    console.log("Tarjeta: " + bipcard);
 }
+
 
 
 //Print total balance
@@ -68,8 +69,10 @@ function total() {
 // Select rate function
 function displayRate() {
     calculate = document.getElementById("rate").value;
-    console.log("Tarifa: " + calculate)
+    console.log("Tarifa: " + calculate);
 }
+
+
 //Print total balance minus rate
 function rateTotal() {
     let url = (`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${bipcard}`);

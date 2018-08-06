@@ -2,31 +2,30 @@
 function w3_open() {
     document.getElementById("sidebar").style.display = "block";
 }
+module.exports = w3_open;
 
 function w3_close() {
     document.getElementById("sidebar").style.display = "none";
 }
+module.exports = w3_close;
 
 //Opciones
 function balance() {
     window.location = "balance.html";
 }
-module.exports = balance;
 
 function rate() {
     window.location = "rate.html";
 }
-module.exports = rate;
 
 function profile() {
     window.location = "profile.html";
 }
-module.exports = profile;
 
 function faq() {
     window.location = "faq.html";
 }
-module.exports = faq;
+
 
 // Acordeon
 function accordeon(id) {
@@ -36,7 +35,9 @@ function accordeon(id) {
     } else {
         faq.className = faq.className.replace(" w3-show", "");
     }
+    module.exports = accordeon;
 }
+
 
 // Logout
 
@@ -50,4 +51,5 @@ function logoutWithFirebase() {
             console.log("Error de Firebase > Codigo > " + error.code)
             console.log("Error de Firebase > Mensaje > " + error.message)
         });
+    module.exports = logoutWithFirebase;
 }
