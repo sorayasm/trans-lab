@@ -1,3 +1,5 @@
+/* global firebase */
+
 // Parameters
 let currentUser = 0;
 let currentUserEmail = 0;

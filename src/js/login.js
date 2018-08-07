@@ -1,3 +1,5 @@
+/* global firebase */
+
 //Login
 function loginWithFirebase() {
     const emailValue = email.value;

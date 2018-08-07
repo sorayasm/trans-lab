@@ -1,3 +1,6 @@
+/* global firebase */
+
+// Parameters
 let name = "";
 let email = "";
 let password = "";
