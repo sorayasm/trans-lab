@@ -43,9 +43,8 @@ function addcard() {
 function displayOption() {
     bipcard = document.getElementById("list").value;
     console.log("Tarjeta: " + bipcard);
+    document.getElementById("bip").disabled = true;
 }
-
-
 
 //Print total balance
 function total() {
@@ -57,6 +56,7 @@ function total() {
             const t = dataBip[2];
             console.log("Saldo de la tarjeta: " + t);
             // Print Balance
+            document.getElementById("total").innerHTML = "";
             document.getElementById("total").style.visibility = "visible";
             const total = document.getElementById("total");
             const p = document.createElement("p");
@@ -69,7 +69,7 @@ function total() {
 // Select rate function
 function displayRate() {
     calculate = document.getElementById("rate").value;
-    console.log("Tarifa: " + calculate);
+    console.log("Tarifa: " + calculate);;
 }
 
 
@@ -85,10 +85,11 @@ function rateTotal() {
             const r = amountValue - calculate;
             console.log(amountValue + " - " + calculate + " = " + r);
             // Print Amount minus Rate
+            document.getElementById("total").innerHTML = "";
             document.getElementById("total").style.visibility = "visible";
             const total = document.getElementById("total");
             const p = document.createElement("p");
-            p.innerHTML = `<p>Saldo: ` + r + `</p>`;
+            p.innerHTML = `<p>Saldo: $` + r + `</p>`;
             total.appendChild(p);
         })
 }

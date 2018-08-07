@@ -7,9 +7,9 @@
 body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -199,6 +199,7 @@ img {
 
 #total {
     margin-top: 25px;
+    margin-bottom: 25px;
     color: white;
     font-size: 35px;
     background-color: rgb(225, 130, 41);
