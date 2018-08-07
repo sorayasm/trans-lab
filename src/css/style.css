@@ -11,7 +11,6 @@ body {
     line-height: 1;
     font-size: 14px;
     text-align: center;
-    background-color: #a5a5a5;
 }
 
 h1 {
@@ -134,9 +133,11 @@ img {
 .logged {
     color: black;
     text-align: center;
-    min-height: 400px;
     margin: 0px;
     padding: 0px;
+    height: 100%;
+    background-color: #a5a5a5;
+    position: absolute;
 }
 
 .login {
@@ -144,6 +145,7 @@ img {
     background-color: #111111;
     color: white;
     height: 100%;
+    position: absolute;
 }
 
 .login img {
@@ -198,9 +200,3 @@ img {
     height: 50px;
     line-height: 50px;
 }
-
-@media screen and (min-width: 320px) {}
-
-@media screen and (min-width: 680px) {}
-
-@media screen and (min-width: 1024px) {}
